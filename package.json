@@ -1,0 +1,24 @@
+{
+  "name": "make-state",
+  "version": "0.0.1",
+  "description": "state management library",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "npx mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richie-south/make-state.git"
+  },
+  "author": "richard soderman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richie-south/make-state/issues"
+  },
+  "homepage": "https://github.com/richie-south/make-state#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "standard": "^13.1.0"
+  }
+}
