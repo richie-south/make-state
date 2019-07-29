@@ -3,17 +3,17 @@
 const chai = require('chai')
 const expect = chai.expect
 
-const { makeState } = require('../src/state')
+const { makeStore } = require('../src/index')
 
 describe('state.js', () => {
   it('get state', () => {
-    const [,, getState] = makeState(true)
+    const [,, getState] = makeStore(true)
 
     expect(getState()).to.be.true
   })
 
   it('set state', () => {
-    const [, setState, getState] = makeState(true)
+    const [, setState, getState] = makeStore(true)
 
     setState(false)
 
@@ -21,7 +21,7 @@ describe('state.js', () => {
   })
 
   it('on change', (done) => {
-    const [onChange, setState, getState] = makeState(true)
+    const [onChange, setState, getState] = makeStore(true)
 
     onChange((updatedState) => {
       expect(updatedState).to.be.false
@@ -33,7 +33,7 @@ describe('state.js', () => {
   })
 
   it('should not call onChange if setState is equal to state', (done) => {
-    const [onChange, setState] = makeState(true)
+    const [onChange, setState] = makeStore(true)
 
     onChange(() => {
       throw new Error('should not run this function')
@@ -47,7 +47,7 @@ describe('state.js', () => {
   })
 
   it('register reducer', (done) => {
-    const [, setState, , { registerReducer }] = makeState(true)
+    const [, setState, , { registerReducer }] = makeStore(true)
 
     registerReducer((state, action) => {
       expect(state).to.be.true
@@ -63,7 +63,7 @@ describe('state.js', () => {
   })
 
   it('reducer updates state', (done) => {
-    const [onChange, setState, getState, { registerReducer }] = makeState(true)
+    const [onChange, setState, getState, { registerReducer }] = makeStore(true)
 
     registerReducer((state, action) => {
       expect(state).to.be.true

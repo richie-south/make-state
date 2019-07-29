@@ -1,5 +1,5 @@
 {
-  "name": "make-state",
+  "name": "zustand",
   "version": "0.0.1",
   "description": "state management library",
   "main": "./src/index.js",

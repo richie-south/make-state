@@ -3,13 +3,12 @@
 const chai = require('chai')
 const expect = chai.expect
 
-const { makeState } = require('../src/state')
-const { combine } = require('../src/combine')
+const { makeStore, combine } = require('../src/index')
 
 describe('combine.js', () => {
   it('merge two stores', () => {
-    const LoadingState = makeState(true)
-    const DataState = makeState({ data: null })
+    const LoadingState = makeStore(true)
+    const DataState = makeStore({ data: null })
 
     const [,, getState] = combine(
       [
@@ -26,9 +25,9 @@ describe('combine.js', () => {
   })
 
   it('on change is any store updates', (done) => {
-    const LoadingState = makeState(true)
+    const LoadingState = makeStore(true)
     const [, setLoading] = LoadingState
-    const DataState = makeState({ data: null })
+    const DataState = makeStore({ data: null })
 
     const [onLoadingDataChanges,, getState] = combine(
       [
@@ -51,9 +50,9 @@ describe('combine.js', () => {
   })
 
   it('merge with combined', (done) => {
-    const LoadingState = makeState(true)
+    const LoadingState = makeStore(true)
     const [, setLoading] = LoadingState
-    const DataState = makeState({ data: null })
+    const DataState = makeStore({ data: null })
 
     const loadingData = combine(
       [
@@ -65,7 +64,7 @@ describe('combine.js', () => {
         ...data
       }))
 
-    const listState = makeState([])
+    const listState = makeStore([])
     const [onChange, , getState] = combine(
       [
         loadingData,

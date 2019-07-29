@@ -1,0 +1,14 @@
+{
+  "name": "make-state-react",
+  "version": "0.0.1",
+  "description": "react bindings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "richard soderman",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.8.6"
+  }
+}

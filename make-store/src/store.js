@@ -1,6 +1,6 @@
 const { shallowEqual } = require('./utls')
 
-function makeState (initialValue) {
+function makeStore (initialValue) {
   let _state = initialValue
   const onChangeCallbacks = []
   let _reducer
@@ -43,4 +43,4 @@ function makeState (initialValue) {
   return _structure
 }
 
-exports.makeState = makeState
+exports.makeStore = makeStore

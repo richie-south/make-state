@@ -1,8 +1,8 @@
-const { makeState } = require('./state')
+const { makeStore } = require('./store')
 const { shallowEqual } = require('./utls')
 
 function combine (stores, mapStateFn) {
-  const _store = makeState()
+  const _store = makeStore()
   const [_onStoreChange, _setStoreState, _getState] = _store
 
   const onChange = () => {
