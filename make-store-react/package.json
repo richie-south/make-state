@@ -1,6 +1,6 @@
 {
   "name": "make-zustand-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "react bindings",
   "main": "index.js",
   "scripts": {
