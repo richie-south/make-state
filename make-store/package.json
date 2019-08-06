@@ -1,6 +1,6 @@
 {
   "name": "make-zustand",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "state management library",
   "main": "./src/index.js",
   "scripts": {
