@@ -1,5 +1,5 @@
 {
-  "name": "make-state-react",
+  "name": "make-zustand-react",
   "version": "0.0.1",
   "description": "react bindings",
   "main": "index.js",
