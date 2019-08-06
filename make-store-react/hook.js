@@ -1,7 +1,7 @@
 const { useState, useEffect } = require('react')
 
 function useStore (store) {
-  const [onChange, , getState] = store
+  const [onChange, setStoreState, getState] = store
   const [state, setState] = useState(getState())
 
   useEffect(() => {
@@ -10,7 +10,7 @@ function useStore (store) {
     })
   }, [])
 
-  return [state]
+  return [state, setStoreState]
 }
 
 exports.useStore = useStore
