@@ -72,7 +72,7 @@ const settingsStore = makeStore({
 const [, setSettingsState] = settingsStore
 
 export function App() {
-  const [settings] = useStore(setsettingsState)
+  const [settings] = useStore(settingsStore)
 
   return (
     <div>
@@ -80,7 +80,7 @@ export function App() {
 
       <input
         onChange={(e) =>
-          setGameSettingsState({
+          setSettingsState({
             ...settings,
             name: e.target.value
           })
