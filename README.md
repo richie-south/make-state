@@ -1,7 +1,10 @@
+The idea is to split your state into multible smaller stores instead of a large one.
 
 # make-zustand
 
 state management library
+
+install `npm i make-zustand`
 
 **basic example**
 ```javascript
@@ -57,6 +60,8 @@ setSettingsState({
 # make-zustand-react
 
 react hook bindings for make-zustand
+
+install `npm i make-zustand-react`
 
 **example**
 ```javascript
